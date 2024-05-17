@@ -27,7 +27,10 @@
 			//lekérdezem a felhasznalo adatai alapján, létezik-e már?
 			$select1="SELECT * FROM felhasznalo WHERE nev='$nev' OR email='$email'";
 			//ha nem, felveszem/beszúrom a táblába az adatait; szerkesztő lesz alapból, és a bejelentkezett mező 0
-			
+			if ($felhasznalonev) {
+				# code...
+			}
+			$felhasznalonev=$this->kapcsolat->querry($select1);
 				//visszatérek a lekérdezés eredményével (sikerült-e beszúrni)
 			//különben hamis
 		}
