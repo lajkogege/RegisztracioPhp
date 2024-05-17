@@ -5,9 +5,17 @@
 		private $jelszo="";
 		private $abNev="pizzahot";
 		private $kapcsolat;
-    
+		
+		//Gergo
 		//konstuktor
 		public function __construct() {	
+		
+		$this->kapcsolat = new mysql(
+			$this->host,
+			$this->felhasznaloNev,
+			$this->jelszo,
+			$this->adatbazis
+		);
 	
 		//ékezetes betűk
 		$this->kapcsolat->query("SET NAMES UTF8");
@@ -15,8 +23,11 @@
 
 		public function reg_felhasznalo($nev, $email, $jelszo){
 			//jelszó titkosítása
+			$jelszo = md5($jelszo);
 			//lekérdezem a felhasznalo adatai alapján, létezik-e már?
+			$select1="SELECT * FROM felhasznalo WHERE nev='$nev' OR email='$email'";
 			//ha nem, felveszem/beszúrom a táblába az adatait; szerkesztő lesz alapból, és a bejelentkezett mező 0
+			
 				//visszatérek a lekérdezés eredményével (sikerült-e beszúrni)
 			//különben hamis
 		}
