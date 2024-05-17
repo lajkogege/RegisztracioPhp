@@ -1,5 +1,6 @@
 <?php
 //session elindítása
+session_start();
 //import
 
 //új felhasználó
@@ -22,6 +23,7 @@
         <main>
             <div>
 				<!--üdvözlés névvel-->
+                <h1>Hello <?php $felh->get_nev($felhAzon); ?>!</h1>
             </div>
 			<div>
 				<!--url-ben állapottartás: link a kijelentkezésre-->
