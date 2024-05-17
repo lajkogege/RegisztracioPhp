@@ -4,7 +4,7 @@
     $felh = new User();
     if (isset($_REQUEST['submit'])) {
         extract($_REQUEST);
-        $login = $felh->bejelentkezes($emailVagyNev, $jelszo);
+        $login = $felh->bejelentkezes($nev, $email, $jelszo);
         if ($login) {
         // sikeres bejelentkezés
 			header("location:home.php");

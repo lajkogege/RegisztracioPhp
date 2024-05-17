@@ -22,9 +22,11 @@
 		}
 
 		
-		public function bejelentkezes($emailNev, $jelszo){
+		public function bejelentkezes($nev, $email, $jelszo){
 			//jelszó titkosítása
+			$jelszo = md5($jelszo);
 			//lekérdezés: email vagy nev a megadott érték
+			$select1="SELECT = FROM felhasznalo WHERE nev = '$nev' OR email = '$email'";
 			//ha már létezik, 
 				//állítsuk be a login kulcsot a sessionben igazra,
 				//hozzuk létre a felhAzon kulcsú sessiont,
